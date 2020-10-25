@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "ankiconv"
+version = "0.1.0"
+description = "A small utility to create Anki flashcards from markdown files."
+authors = ["Kevin Dungs <kevin@dun.gs>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Markdown = "^3.3.2"
+beautifulsoup4 = "^4.9.3"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+mypy = "^0.790"
+pre-commit = "^2.7.1"
+isort = "^5.6.4"
+flake8 = "^3.8.4"
+
+[tool.poetry.scripts]
+ankiconv = "ankiconv.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 80
+target-version = ["py38"]
+
+[mypy]
+ignore_missing_imports = true
+strict = true
